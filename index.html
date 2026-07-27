@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архипелаг. Осинте.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Фоновая музыка -->
+    <audio id="bg-music" loop>
+        <source src="bg-music.wav" type="audio/wav">
+    </audio>
+
+    <!-- Фон с летящими вверх частицами -->
+    <div class="background-container" id="bg-container"></div>
+
+    <div class="container show">
+        <div class="card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+            <div class="card-content">
+                
+                <div class="profile">
+                    <div class="avatar-wrapper">
+                        <!-- Заглушка, пока нет фото -->
+                        <div class="avatar-placeholder" id="avatar-placeholder">Фото</div>
+                        <img src="" alt="Avatar" style="display: none;" id="user-avatar">
+                        <div class="online-dot"></div>
+                    </div>
+                    <h2 id="user-name">Загрузка...</h2>
+                    <p class="profession" id="user-profession">Загрузка...</p>
+                </div>
+
+                <div class="about-box" id="user-about">
+                    Загрузка...
+                </div>
+
+                <div class="skills-section">
+                    <h3 class="section-title">Навыки</h3>
+                    <div class="skill-tags" id="user-skills">
+                        <!-- Навыки загрузятся из config.js -->
+                    </div>
+                </div>
+
+                <div class="links-grid" id="user-links">
+                    <!-- Ссылки загрузятся из config.js -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка музыки -->
+    <div class="music-toggle" id="music-btn" title="Музыка">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
