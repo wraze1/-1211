@@ -45,11 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: 400,
         glare: true,
         "max-glare": 0.15,
-        scale: 1.02
+        scale: 1.02,
+        gyroscope: false // Отключаем гироскоп, чтобы работал touch-drag
     });
 
-    // Управление музыкой
-    musicBtn.addEventListener('click', () => {
+    // Управление музыкой (с поддержкой мобилок)
+    function toggleMusic(e) {
+        if (e && e.type === 'touchstart') e.preventDefault();
+        
         if (isPlaying) {
             audio.pause();
             musicIcon.classList.remove('fa-pause');
@@ -61,7 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
             musicIcon.classList.add('fa-pause');
         }
         isPlaying = !isPlaying;
-    });
+    }
+
+    musicBtn.addEventListener('click', toggleMusic);
+    musicBtn.addEventListener('touchstart', toggleMusic, {passive: false});
 
     // Генерация частиц (искр), летящих вверх
     setInterval(createParticle, 400);
