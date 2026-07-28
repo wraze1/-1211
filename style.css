@@ -69,6 +69,7 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.02);
     transform-style: preserve-3d;
     transition: box-shadow 0.3s, border-color 0.3s;
+    touch-action: none;
 }
 
 .card:hover {
